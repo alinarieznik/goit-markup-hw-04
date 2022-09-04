@@ -23,6 +23,8 @@
     /* Others */
     --header-border: #ECECEC;
     --gallary-border:#EEEEEE;
+    --icons: #AFB1B8;
+    --background-icons-footer: rgba(255, 255, 255, 0.1);
 }
 
 /* Main styles (inherited by other elements) */
@@ -60,6 +62,7 @@ html {
 .features-list,
 .activity-list,
 .team-list,
+.clients-list,
 .footer-list,
 .projects-list.button,
 .projects-list.gallery {
@@ -165,7 +168,9 @@ margin-right: 50px;
     line-height: calc(16 / 14);
     letter-spacing: 0.02em;
     
-    display: inline-block;
+    display: flex;
+    align-items: center;
+    gap: 10px;
     padding-top: 32px;
     padding-bottom: 32px;
 }
@@ -179,10 +184,18 @@ margin-right: 50px;
 /* Hero */
 .hero {
     background-color: var(--hero-footer-bg-color);
+    background-image: linear-gradient(to right, rgba(47, 48, 58, 0.4), rgba(47, 48, 58, 0.4)), url(../images/backround-hero.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
     text-align: center;
 
+    height: 600px;
+    max-width: 1600px;
     padding-top: 200px;
     padding-bottom: 200px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .hero-title {
@@ -247,6 +260,18 @@ margin-right: 50px;
     display: flex;
 }
 
+.background-icon {
+    background-color: var(--secondary-bg-color);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 120px;
+    margin-bottom: 30px;
+}
+
+
+
 .features-list .list-item {
     width: 270px;
 }
@@ -286,7 +311,8 @@ margin-right: 50px;
 }
 
 .activity-title,
-.team-title {
+.team-title,
+.clients-title {
     font-size: 36px;
     font-weight: 700;
     line-height: calc(42 / 36);
@@ -315,8 +341,7 @@ margin-right: 50px;
 }
 
 .team-undertitle {
-    padding-top: 30px;
-    padding-bottom: 30px;
+    padding: 30px;
 }
 
 .team-name {
@@ -331,7 +356,67 @@ margin-right: 50px;
 .team-list .list-text {
     font-size: 16px;
     line-height: calc(19 / 16);
-    text-align: center;  
+    text-align: center; 
+    margin-bottom: 16px; 
+}
+
+.socials {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+
+    list-style: none;
+}
+
+.socials-link {
+    width: 44px;
+    height: 44px;
+    background-color: var(--primary-white-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: var(--icons);
+}
+
+.socials-link:hover,
+.socials-link:focus {
+    color: var(--primary-white-color);
+    background-color: var(--accent-color);
+}
+
+.socials-icon {
+    fill: currentColor;
+}
+
+/* Clients */
+.clients-list {
+    display: flex;
+    gap: 30px;
+}
+
+.clients-list .list-item {
+   width: 170px;
+   height: 92px;
+}
+
+.clients-link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+
+    border: 1px solid var(--icons);
+    border-radius: 4px;
+    fill: var(--icons);
+}
+
+.clients-link:hover,
+.clients-link:focus {
+    fill: var(--accent-color);
+    border-color: var(--accent-color);
 }
 
 /* Footer */
@@ -339,6 +424,15 @@ margin-right: 50px;
     background-color: var(--hero-footer-bg-color);
     padding-top: 60px;
     padding-bottom: 60px;
+}
+
+.footer-column {
+    display: flex;
+    align-items: baseline;
+}
+
+.footer-contacts {
+    margin-right: 70px;
 }
 
 .footer-logo {
@@ -368,6 +462,25 @@ margin-right: 50px;
 .footer-list .list-link:hover,
 .footer-list .list-link:focus {
     color: var(--accent-color);
+}
+
+.socials-title {
+    font-size: 14px;
+    line-height: calc(16 / 14);
+    text-transform: uppercase;
+    color: var(--primary-white-color);
+
+    margin-bottom: 20px;
+}
+
+.footer-socials .socials-link {
+    background-color: var(--background-icons-footer);
+    color: var(--primary-white-color);
+}
+
+.footer-socials .socials-link:hover,
+.footer-socials .socials-link:focus {
+    background-color: var(--accent-color);
 }
 
 /* Styles portfolio.html only */
@@ -425,6 +538,17 @@ margin-right: 50px;
     margin-bottom: 30px;
 }
 
+.item-gallary .list-link {
+    width: 100%;
+    height: 100%;
+}
+
+/* does not work, do not know why */
+.item-gallary .list-link:hover,
+.item-gallary .list-link:focus {
+    box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06), 1px 4px 6px rgba(0, 0, 0, 0.16);
+}
+
 .gallary-undertitle {
     padding-top: 20px;
     padding-right: 24px;
@@ -434,6 +558,7 @@ margin-right: 50px;
     border-left: 1px solid var(--gallary-border);
     border-bottom: 1px solid var(--gallary-border);
 }
+
 
 .item-gallary .title {
     font-weight: 700;
